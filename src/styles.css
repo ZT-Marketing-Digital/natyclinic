@@ -38,8 +38,11 @@
 
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-panel: var(--panel);
   --color-cta: var(--cta);
   --color-cta-foreground: var(--cta-foreground);
+  --color-mint: var(--mint);
+  --color-cream: var(--cream);
   --color-mint: var(--mint);
   --color-cream: var(--cream);
 
@@ -50,43 +53,44 @@
 :root {
   --radius: 0.875rem;
 
-  /* Cream/warm off-white background */
-  --background: oklch(0.985 0.008 90);
-  --foreground: oklch(0.18 0.03 240);
+  /* Pure black canvas with white text — Naty brand palette */
+  --background: #000000;
+  --foreground: #ffffff;
 
-  --cream: oklch(0.985 0.008 90);
-  --ink: oklch(0.18 0.035 240);          /* deep navy */
-  --ink-foreground: oklch(0.985 0.008 90);
+  --cream: #000000;
+  --ink: #14101f;                 /* dark elevated panel */
+  --ink-foreground: #ffffff;
+  --panel: #14101f;               /* dark panel surface */
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 240);
+  --card: #0e0b18;
+  --card-foreground: #ffffff;
+  --popover: #14101f;
+  --popover-foreground: #ffffff;
 
-  --primary: oklch(0.18 0.035 240);      /* navy */
-  --primary-foreground: oklch(0.985 0.008 90);
+  --primary: #6d48e8;             /* Naty purple */
+  --primary-foreground: #ffffff;
 
-  --secondary: oklch(0.95 0.02 90);
-  --secondary-foreground: oklch(0.18 0.035 240);
+  --secondary: #1a1428;
+  --secondary-foreground: #ffffff;
 
-  --muted: oklch(0.955 0.012 90);
-  --muted-foreground: oklch(0.45 0.02 240);
+  --muted: #1a1428;
+  --muted-foreground: rgba(255, 255, 255, 0.65);
 
-  --accent: oklch(0.94 0.05 165);
-  --accent-foreground: oklch(0.18 0.035 240);
+  --accent: #51e186;              /* Naty green */
+  --accent-foreground: #000000;
 
-  /* CTA: vivid coral/orange — high contrast on cream + navy */
-  --cta: oklch(0.72 0.19 40);
-  --cta-foreground: oklch(0.99 0.005 90);
+  /* CTA: Naty purple */
+  --cta: #6d48e8;
+  --cta-foreground: #ffffff;
 
-  /* Mint accent for glyphs / highlights */
-  --mint: oklch(0.78 0.15 165);
+  /* Mint / green accent */
+  --mint: #51e186;
 
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.015 240 / 60%);
-  --input: oklch(0.9 0.015 240);
-  --ring: oklch(0.72 0.19 40 / 55%);
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: rgba(109, 72, 232, 0.55);
 }
 
 @layer base {
