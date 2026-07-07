@@ -29,7 +29,7 @@ import featureInbox from "@/assets/feature-inbox.jpg";
 import featureAi from "@/assets/feature-ai.jpg";
 import featureClinicorp from "@/assets/feature-clinicorp.jpg";
 
-import { Button } from "@/components/ui/button";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
