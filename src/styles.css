@@ -38,8 +38,11 @@
 
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-panel: var(--panel);
   --color-cta: var(--cta);
   --color-cta-foreground: var(--cta-foreground);
+  --color-mint: var(--mint);
+  --color-cream: var(--cream);
   --color-mint: var(--mint);
   --color-cream: var(--cream);
 
