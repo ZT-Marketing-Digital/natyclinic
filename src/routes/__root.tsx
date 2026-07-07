@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética.",
       },
       { name: "author", content: "Naty" },
-      { property: "og:title", content: "Naty — Sua clínica para de perder pacientes no WhatsApp" },
+      { property: "og:title", content: "Naty — IA que responde e agenda pacientes 24h no WhatsApp" },
       {
         property: "og:description",
         content:
@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Naty — IA que responde e agenda pacientes 24h no WhatsApp" },
+      { name: "description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
+      { property: "og:description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
+      { name: "twitter:description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05bdc78d-629d-431a-95d6-4629bf4886a6/id-preview-5273e82c--a31928c4-bea0-4a65-8c49-8d15d1a576d8.lovable.app-1783447840031.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05bdc78d-629d-431a-95d6-4629bf4886a6/id-preview-5273e82c--a31928c4-bea0-4a65-8c49-8d15d1a576d8.lovable.app-1783447840031.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
