@@ -28,6 +28,7 @@ import teamPhoto from "@/assets/team.jpg";
 import featureInbox from "@/assets/feature-inbox.jpg";
 import featureAi from "@/assets/feature-ai.jpg";
 import featureClinicorp from "@/assets/feature-clinicorp.jpg";
+import natyLogo from "@/assets/naty-logo.png.asset.json";
 
 
 import { Input } from "@/components/ui/input";
@@ -94,11 +95,8 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--ink)]/5 bg-[var(--cream)]/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <a href="#" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--ink)] text-[var(--ink-foreground)]">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">Naty</span>
+        <a href="#" className="flex items-center" aria-label="Naty Clinic">
+          <img src={natyLogo.url} alt="Naty Clinic" className="h-9 w-auto sm:h-10" />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--ink)]/75 md:flex">
           <a href="#solucao" className="hover:text-[var(--ink)]">Solução</a>
@@ -923,11 +921,8 @@ function Footer() {
     <footer className="border-t border-[var(--ink)]/10 bg-white/60">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--ink)] text-[var(--ink-foreground)]">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            <span className="text-lg font-extrabold tracking-tight">Naty</span>
+          <div className="flex items-center">
+            <img src={natyLogo.url} alt="Naty Clinic" className="h-10 w-auto" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-[var(--ink)]/60">
             IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Feita para clínicas
