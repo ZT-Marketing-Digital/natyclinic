@@ -83,7 +83,7 @@ function CTAButton({
 
 function SectionTag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--ink)]/70 backdrop-blur">
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/70 backdrop-blur">
       <span className="h-1.5 w-1.5 rounded-full bg-[var(--cta)]" />
       {children}
     </span>
@@ -93,16 +93,16 @@ function SectionTag({ children }: { children: React.ReactNode }) {
 /* ---------------- NAV ---------------- */
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--ink)]/5 bg-[var(--cream)]/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/5 bg-black/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a href="#" className="flex items-center" aria-label="Naty Clinic">
           <img src={natyLogo.url} alt="Naty Clinic" className="h-9 w-auto sm:h-10" />
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--ink)]/75 md:flex">
-          <a href="#solucao" className="hover:text-[var(--ink)]">Solução</a>
-          <a href="#calculadora" className="hover:text-[var(--ink)]">Calculadora</a>
-          <a href="#depoimentos" className="hover:text-[var(--ink)]">Clientes</a>
-          <a href="#faq" className="hover:text-[var(--ink)]">FAQ</a>
+        <nav className="hidden items-center gap-8 text-sm font-medium text-white/75 md:flex">
+          <a href="#solucao" className="hover:text-white">Solução</a>
+          <a href="#calculadora" className="hover:text-white">Calculadora</a>
+          <a href="#depoimentos" className="hover:text-white">Clientes</a>
+          <a href="#faq" className="hover:text-white">FAQ</a>
         </nav>
         <CTAButton size="sm" className="hidden sm:inline-flex">{CTA_LABEL}</CTAButton>
       </div>
@@ -125,7 +125,7 @@ function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-10 sm:px-6 md:grid-cols-2 md:gap-12 md:pb-24 md:pt-16">
         <div className="flex flex-col justify-center">
           <SectionTag>Integração oficial Clinicorp</SectionTag>
-          <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
             Sua clínica está perdendo pacientes no WhatsApp.{" "}
             <span className="relative inline-block">
               <span className="relative z-10">A Naty resolve isso em 7 dias.</span>
@@ -136,7 +136,7 @@ function Hero() {
               />
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-[var(--ink)]/70">
+          <p className="mt-6 max-w-xl text-lg text-white/70">
             Plataforma com IA que responde, qualifica e agenda pacientes 24 horas por dia —
             integrada ao Clinicorp e feita para clínicas odontológicas e de estética.
           </p>
@@ -144,25 +144,25 @@ function Hero() {
             <CTAButton>{CTA_LABEL}</CTAButton>
             <a
               href="#demo-video"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--ink)]/80 underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 underline-offset-4 hover:underline"
             >
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-[var(--ink)] text-[var(--ink-foreground)]">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-[var(--panel)] text-[var(--ink-foreground)]">
                 <Play className="h-3.5 w-3.5 fill-current" />
               </span>
               Ver como funciona em 2 minutos
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-[var(--ink)]/10 pt-6 text-sm text-[var(--ink)]/70">
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/10 pt-6 text-sm text-white/70">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-[var(--cta)]" />
-              <span className="font-semibold text-[var(--ink)]">Integração oficial Clinicorp</span>
+              <span className="font-semibold text-white">Integração oficial Clinicorp</span>
             </div>
             <div className="flex -space-x-2">
               {["#1f3a5f", "#2b6ca6", "#0e7c66", "#a34d2b", "#3a2b6c"].map((c) => (
                 <span
                   key={c}
-                  className="grid h-8 w-8 place-items-center rounded-full border-2 border-[var(--cream)] text-[10px] font-bold text-white"
+                  className="grid h-8 w-8 place-items-center rounded-full border-2 border-white/10 text-[10px] font-bold text-white"
                   style={{ backgroundColor: c }}
                 >
                   {String.fromCharCode(65 + Math.floor(Math.random() * 26))}
@@ -175,7 +175,7 @@ function Hero() {
 
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-[var(--mint)]/40 via-transparent to-[var(--cta)]/20 blur-2xl" />
-          <div className="overflow-hidden rounded-2xl border border-[var(--ink)]/10 bg-white shadow-[0_40px_80px_-30px_color-mix(in_oklab,var(--ink)_35%,transparent)]">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--panel)] shadow-[0_40px_80px_-30px_color-mix(in_oklab,var(--ink)_35%,transparent)]">
             <img
               src={heroMockup}
               alt="Naty rodando em notebook e celular — caixa de entrada unificada"
@@ -186,12 +186,12 @@ function Hero() {
           </div>
 
           {/* Floating stat card */}
-          <div className="absolute -bottom-6 left-4 hidden items-center gap-3 rounded-xl border border-[var(--ink)]/10 bg-white p-3 shadow-xl sm:flex">
-            <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--mint)]/30 text-[var(--ink)]">
+          <div className="absolute -bottom-6 left-4 hidden items-center gap-3 rounded-xl border border-white/10 bg-[var(--panel)] p-3 shadow-xl sm:flex">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--mint)]/30 text-white">
               <Zap className="h-5 w-5" />
             </span>
             <div>
-              <div className="text-xs text-[var(--ink)]/60">Resposta média</div>
+              <div className="text-xs text-white/60">Resposta média</div>
               <div className="text-sm font-bold">em 12 segundos</div>
             </div>
           </div>
@@ -199,8 +199,8 @@ function Hero() {
       </div>
 
       {/* Social proof strip */}
-      <div className="border-y border-[var(--ink)]/10 bg-white/60">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-4 py-6 text-[var(--ink)]/50 sm:px-6">
+      <div className="border-y border-white/10 bg-white/5">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-4 py-6 text-white/50 sm:px-6">
           <span className="text-xs font-semibold uppercase tracking-[0.2em]">
             Clínicas que confiam na Naty
           </span>
@@ -238,16 +238,16 @@ function PainSection() {
           {pains.map(({ icon: Icon, text }) => (
             <div
               key={text}
-              className="group flex items-start gap-4 rounded-2xl border border-[var(--ink)]/10 bg-white p-6 transition-all hover:-translate-y-1 hover:border-[var(--cta)]/40 hover:shadow-lg"
+              className="group flex items-start gap-4 rounded-2xl border border-white/10 bg-[var(--panel)] p-6 transition-all hover:-translate-y-1 hover:border-[var(--cta)]/40 hover:shadow-lg"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--ink)] text-[var(--ink-foreground)]">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--panel)] text-[var(--ink-foreground)]">
                 <Icon className="h-5 w-5" />
               </span>
-              <p className="text-lg font-semibold leading-snug text-[var(--ink)]">{text}</p>
+              <p className="text-lg font-semibold leading-snug text-white">{text}</p>
             </div>
           ))}
         </div>
-        <p className="mt-12 text-center text-xl font-bold text-[var(--ink)] sm:text-2xl">
+        <p className="mt-12 text-center text-xl font-bold text-white sm:text-2xl">
           Isso não é falha da sua equipe.{" "}
           <span className="text-[var(--cta)]">É falha de estrutura.</span>
         </p>
@@ -275,11 +275,11 @@ function Calculator() {
   return (
     <section id="calculadora" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="overflow-hidden rounded-3xl bg-[var(--ink)] text-[var(--ink-foreground)] shadow-[var(--shadow-elegant)]">
+        <div className="overflow-hidden rounded-3xl bg-[var(--panel)] text-[var(--ink-foreground)] shadow-[var(--shadow-elegant)]">
           <div className="grid gap-10 p-8 md:grid-cols-[1.1fr_1fr] md:p-14">
             <div>
               <SectionTag>
-                <span className="text-[var(--ink)]/80">Calculadora</span>
+                <span className="text-white/80">Calculadora</span>
               </SectionTag>
               <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
                 Faça as contas do que sua clínica está deixando na mesa.
@@ -395,7 +395,7 @@ function Solution() {
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             A Naty é a estrutura que sua clínica precisa.
           </h2>
-          <p className="mt-5 text-lg text-[var(--ink)]/70">
+          <p className="mt-5 text-lg text-white/70">
             Uma plataforma que centraliza o WhatsApp, responde com IA e organiza o processo de
             agendamento do início ao fim.
           </p>
@@ -410,19 +410,19 @@ function Solution() {
               }`}
             >
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-[var(--mint)]/25 px-3 py-1 text-xs font-semibold text-[var(--ink)]">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[var(--mint)]/25 px-3 py-1 text-xs font-semibold text-white">
                   <b.icon className="h-3.5 w-3.5" />
                   {b.tag}
                 </div>
-                <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[var(--ink)] sm:text-3xl md:text-4xl">
+                <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl md:text-4xl">
                   {b.title}
                 </h3>
-                <p className="mt-4 text-lg text-[var(--ink)]/70">{b.body}</p>
+                <p className="mt-4 text-lg text-white/70">{b.body}</p>
                 <CTAButton size="sm" className="mt-6">
                   {CTA_LABEL}
                 </CTAButton>
               </div>
-              <div className="overflow-hidden rounded-2xl border border-[var(--ink)]/10 bg-white shadow-xl">
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--panel)] shadow-xl">
                 <img
                   src={b.img}
                   alt={b.tag}
@@ -451,7 +451,7 @@ function VideoSection() {
             Veja a Naty rodando em uma clínica real.
           </h2>
         </div>
-        <div className="relative mt-10 aspect-video overflow-hidden rounded-3xl border border-[var(--ink)]/10 bg-[var(--ink)]">
+        <div className="relative mt-10 aspect-video overflow-hidden rounded-3xl border border-white/10 bg-[var(--panel)]">
           <img
             src={heroMockup}
             alt="Vídeo demonstração Naty"
@@ -519,7 +519,7 @@ function Testimonials() {
     },
   ];
   return (
-    <section id="depoimentos" className="bg-[var(--ink)] py-20 text-[var(--ink-foreground)] sm:py-28">
+    <section id="depoimentos" className="bg-[var(--panel)] py-20 text-[var(--ink-foreground)] sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <SectionTag>
@@ -623,13 +623,13 @@ function Process() {
           {steps.map((s, i) => (
             <li
               key={s.t}
-              className="relative rounded-2xl border border-[var(--ink)]/10 bg-white p-6"
+              className="relative rounded-2xl border border-white/10 bg-[var(--panel)] p-6"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[var(--ink)] font-extrabold text-[var(--ink-foreground)]">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[var(--panel)] font-extrabold text-[var(--ink-foreground)]">
                 {i + 1}
               </span>
-              <h3 className="mt-5 text-lg font-bold text-[var(--ink)]">{s.t}</h3>
-              <p className="mt-2 text-sm text-[var(--ink)]/70">{s.d}</p>
+              <h3 className="mt-5 text-lg font-bold text-white">{s.t}</h3>
+              <p className="mt-2 text-sm text-white/70">{s.d}</p>
             </li>
           ))}
         </ol>
@@ -657,7 +657,7 @@ function Comparison() {
       return <CheckCircle2 className="mx-auto h-5 w-5 text-[var(--mint)]" aria-label="Sim" />;
     if (v === "warn")
       return <AlertTriangle className="mx-auto h-5 w-5 text-amber-500" aria-label="Parcial" />;
-    return <XCircle className="mx-auto h-5 w-5 text-[var(--ink)]/25" aria-label="Não" />;
+    return <XCircle className="mx-auto h-5 w-5 text-white/25" aria-label="Não" />;
   };
 
   return (
@@ -670,12 +670,12 @@ function Comparison() {
           </h2>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-[var(--ink)]/10 bg-white">
-          <div className="grid grid-cols-4 border-b border-[var(--ink)]/10 bg-[var(--muted)] text-xs font-bold uppercase tracking-wider text-[var(--ink)]/60 sm:text-sm">
+        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[var(--panel)]">
+          <div className="grid grid-cols-4 border-b border-white/10 bg-white/5 text-xs font-bold uppercase tracking-wider text-white/60 sm:text-sm">
             <div className="p-4 sm:p-5"></div>
             <div className="p-4 text-center sm:p-5">Fazer sozinho</div>
             <div className="p-4 text-center sm:p-5">Chatbot genérico</div>
-            <div className="bg-[var(--ink)] p-4 text-center text-[var(--ink-foreground)] sm:p-5">
+            <div className="bg-[var(--panel)] p-4 text-center text-[var(--ink-foreground)] sm:p-5">
               Naty
             </div>
           </div>
@@ -683,10 +683,10 @@ function Comparison() {
             <div
               key={r[0]}
               className={`grid grid-cols-4 items-center ${
-                idx % 2 === 0 ? "bg-white" : "bg-[var(--muted)]/40"
+                idx % 2 === 0 ? "bg-[var(--panel)]" : "bg-white/[0.04]"
               }`}
             >
-              <div className="p-4 text-sm font-semibold text-[var(--ink)] sm:p-5 sm:text-base">
+              <div className="p-4 text-sm font-semibold text-white sm:p-5 sm:text-base">
                 {r[0]}
               </div>
               <div className="p-4 sm:p-5">
@@ -695,7 +695,7 @@ function Comparison() {
               <div className="p-4 sm:p-5">
                 <Cell v={r[2]} />
               </div>
-              <div className="bg-[var(--ink)]/[0.03] p-4 sm:p-5">
+              <div className="bg-white/[0.03] p-4 sm:p-5">
                 <Cell v={r[3]} />
               </div>
             </div>
@@ -751,13 +751,13 @@ function FAQ() {
             Perguntas que a gente sempre escuta.
           </h2>
         </div>
-        <Accordion type="single" collapsible className="mt-10 divide-y divide-[var(--ink)]/10 border-y border-[var(--ink)]/10">
+        <Accordion type="single" collapsible className="mt-10 divide-y divide-[var(--ink)]/10 border-y border-white/10">
           {faqs.map((f, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-0">
               <AccordionTrigger className="py-5 text-left text-base font-semibold hover:no-underline sm:text-lg [&>svg]:h-5 [&>svg]:w-5">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="pb-5 text-base text-[var(--ink)]/70">
+              <AccordionContent className="pb-5 text-base text-white/70">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -782,13 +782,13 @@ function FinalCTA() {
   return (
     <section id="cta-final" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 rounded-3xl border border-[var(--ink)]/10 bg-white p-8 shadow-[var(--shadow-elegant)] md:grid-cols-[1.1fr_1fr] md:p-14">
+        <div className="grid gap-10 rounded-3xl border border-white/10 bg-[var(--panel)] p-8 shadow-[var(--shadow-elegant)] md:grid-cols-[1.1fr_1fr] md:p-14">
           <div>
             <SectionTag>Última chamada</SectionTag>
             <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               Sua clínica pode parar de perder pacientes ainda essa semana.
             </h2>
-            <p className="mt-5 text-lg text-[var(--ink)]/70">
+            <p className="mt-5 text-lg text-white/70">
               Agenda uma demonstração gratuita de 20 minutos. Nosso time vai te mostrar, com os seus
               números, quanto você está perdendo hoje e como resolver.
             </p>
@@ -872,13 +872,13 @@ function FinalCTA() {
                 {sent ? "Recebemos! Vamos te chamar no WhatsApp." : "Quero minha demonstração gratuita"}
                 {!sent && <ArrowRight className="h-4 w-4" />}
               </button>
-              <p className="text-center text-xs text-[var(--ink)]/50">
+              <p className="text-center text-xs text-white/50">
                 Vagas de onboarding limitadas por semana.
               </p>
             </form>
           </div>
 
-          <aside className="flex flex-col justify-between rounded-2xl bg-[var(--ink)] p-8 text-[var(--ink-foreground)]">
+          <aside className="flex flex-col justify-between rounded-2xl bg-[var(--panel)] p-8 text-[var(--ink-foreground)]">
             <div>
               <h3 className="text-xl font-extrabold sm:text-2xl">O que você recebe na demonstração</h3>
               <ul className="mt-6 space-y-4 text-white/85">
@@ -918,33 +918,33 @@ function FinalCTA() {
 /* ---------------- FOOTER ---------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[var(--ink)]/10 bg-white/60">
+    <footer className="border-t border-white/10 bg-white/5">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center">
             <img src={natyLogo.url} alt="Naty Clinic" className="h-10 w-auto" />
           </div>
-          <p className="mt-4 max-w-sm text-sm text-[var(--ink)]/60">
+          <p className="mt-4 max-w-sm text-sm text-white/60">
             IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Feita para clínicas
             odontológicas e de estética.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]/70">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[var(--panel)] px-3 py-1.5 text-xs font-semibold text-white/70">
               <ShieldCheck className="h-3.5 w-3.5 text-[var(--mint)]" /> LGPD
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]/70">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[var(--panel)] px-3 py-1.5 text-xs font-semibold text-white/70">
               <CheckCircle2 className="h-3.5 w-3.5 text-[var(--mint)]" /> Integração oficial Clinicorp
             </span>
           </div>
         </div>
         <div>
-          <div className="text-xs font-bold uppercase tracking-widest text-[var(--ink)]/50">
+          <div className="text-xs font-bold uppercase tracking-widest text-white/50">
             Navegação
           </div>
           <ul className="mt-4 space-y-2 text-sm">
             {["Sobre", "Cases", "Blog", "Contato", "Política de privacidade"].map((l) => (
               <li key={l}>
-                <a href="#" className="text-[var(--ink)]/75 hover:text-[var(--ink)]">
+                <a href="#" className="text-white/75 hover:text-white">
                   {l}
                 </a>
               </li>
@@ -952,27 +952,27 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-xs font-bold uppercase tracking-widest text-[var(--ink)]/50">
+          <div className="text-xs font-bold uppercase tracking-widest text-white/50">
             Fale com a Naty
           </div>
-          <ul className="mt-4 space-y-2 text-sm text-[var(--ink)]/75">
+          <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li>WhatsApp de suporte</li>
             <li>ola@naty.app</li>
           </ul>
-          <div className="mt-5 flex gap-3 text-[var(--ink)]/60">
-            <a href="#" aria-label="Instagram" className="hover:text-[var(--ink)]">
+          <div className="mt-5 flex gap-3 text-white/60">
+            <a href="#" aria-label="Instagram" className="hover:text-white">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-[var(--ink)]">
+            <a href="#" aria-label="LinkedIn" className="hover:text-white">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" aria-label="YouTube" className="hover:text-[var(--ink)]">
+            <a href="#" aria-label="YouTube" className="hover:text-white">
               <Youtube className="h-5 w-5" />
             </a>
           </div>
         </div>
       </div>
-      <div className="border-t border-[var(--ink)]/10 py-5 text-center text-xs text-[var(--ink)]/50">
+      <div className="border-t border-white/10 py-5 text-center text-xs text-white/50">
         © {new Date().getFullYear()} Naty. Todos os direitos reservados.
       </div>
     </footer>
@@ -1005,7 +1005,7 @@ function StickyCTA() {
 
 function UrgencyBar() {
   return (
-    <div className="bg-[var(--ink)] py-2 text-center text-xs font-semibold text-[var(--ink-foreground)] sm:text-sm">
+    <div className="bg-[var(--panel)] py-2 text-center text-xs font-semibold text-[var(--ink-foreground)] sm:text-sm">
       <span className="inline-flex items-center gap-2">
         <Sparkles className="h-3.5 w-3.5 text-[var(--mint)]" />
         Setup gratuito por tempo limitado —{" "}
@@ -1020,7 +1020,7 @@ function UrgencyBar() {
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-[var(--cream)] text-[var(--ink)]">
+    <div className="min-h-screen bg-black text-white">
       <UrgencyBar />
       <Nav />
       <main>
