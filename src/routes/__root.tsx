@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -96,8 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
       { property: "og:description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
       { name: "twitter:description", content: "Plataforma com IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Integração oficial Clinicorp. Feita para clínicas odontológicas e de estética." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05bdc78d-629d-431a-95d6-4629bf4886a6/id-preview-5273e82c--a31928c4-bea0-4a65-8c49-8d15d1a576d8.lovable.app-1783447840031.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05bdc78d-629d-431a-95d6-4629bf4886a6/id-preview-5273e82c--a31928c4-bea0-4a65-8c49-8d15d1a576d8.lovable.app-1783447840031.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
