@@ -14,7 +14,6 @@ import {
   AlertTriangle,
   ArrowRight,
   ShieldCheck,
-  Play,
   Star,
   Instagram,
   Linkedin,
@@ -28,7 +27,7 @@ import teamPhoto from "@/assets/team.jpg";
 import featureInbox from "@/assets/feature-inbox.jpg";
 import featureAi from "@/assets/feature-ai.jpg";
 import featureClinicorp from "@/assets/feature-clinicorp.jpg";
-import natyLogo from "@/assets/naty-logo.png.asset.json";
+import natyLogo from "@/assets/naty-logo.jpg";
 
 
 import { Input } from "@/components/ui/input";
@@ -81,22 +80,13 @@ function CTAButton({
   );
 }
 
-function SectionTag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/70 backdrop-blur">
-      <span className="h-1.5 w-1.5 rounded-full bg-[var(--cta)]" />
-      {children}
-    </span>
-  );
-}
-
 /* ---------------- NAV ---------------- */
 function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-black/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a href="#" className="flex items-center" aria-label="Naty Clinic">
-          <img src={natyLogo.url} alt="Naty Clinic" className="h-9 w-auto sm:h-10" />
+          <img src={natyLogo} alt="Naty Clinic" className="h-9 w-auto sm:h-10" />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-white/75 md:flex">
           <a href="#solucao" className="hover:text-white">Solução</a>
@@ -111,6 +101,8 @@ function Nav() {
 }
 
 /* ---------------- HERO ---------------- */
+const clinicNames = ["SorrisoLab", "OdontoPrime", "EstéticaPlus", "ClinicaBem", "SmileHub", "Bella Face"];
+
 function Hero() {
   return (
     <section className="relative overflow-hidden">
@@ -124,7 +116,6 @@ function Hero() {
       />
       <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-10 sm:px-6 md:grid-cols-2 md:gap-12 md:pb-24 md:pt-16">
         <div className="flex flex-col justify-center">
-          <SectionTag>Integração oficial Clinicorp</SectionTag>
           <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
             Sua clínica está perdendo pacientes no WhatsApp.{" "}
             <span className="relative inline-block">
@@ -142,15 +133,6 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <CTAButton>{CTA_LABEL}</CTAButton>
-            <a
-              href="#demo-video"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 underline-offset-4 hover:underline"
-            >
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-[var(--panel)] text-[var(--ink-foreground)]">
-                <Play className="h-3.5 w-3.5 fill-current" />
-              </span>
-              Ver como funciona em 2 minutos
-            </a>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/10 pt-6 text-sm text-white/70">
@@ -158,18 +140,6 @@ function Hero() {
               <ShieldCheck className="h-4 w-4 text-[var(--cta)]" />
               <span className="font-semibold text-white">Integração oficial Clinicorp</span>
             </div>
-            <div className="flex -space-x-2">
-              {["#1f3a5f", "#2b6ca6", "#0e7c66", "#a34d2b", "#3a2b6c"].map((c) => (
-                <span
-                  key={c}
-                  className="grid h-8 w-8 place-items-center rounded-full border-2 border-white/10 text-[10px] font-bold text-white"
-                  style={{ backgroundColor: c }}
-                >
-                  {String.fromCharCode(65 + Math.floor(Math.random() * 26))}
-                </span>
-              ))}
-            </div>
-            <span className="font-medium">+240 clínicas já usam a Naty</span>
           </div>
         </div>
 
@@ -198,21 +168,31 @@ function Hero() {
         </div>
       </div>
 
-      {/* Social proof strip */}
+      {/* Social proof strip — commented out per request
       <div className="border-y border-white/10 bg-white/5">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-4 py-6 text-white/50 sm:px-6">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-            Clínicas que confiam na Naty
-          </span>
-          {["SorrisoLab", "OdontoPrime", "EstéticaPlus", "ClinicaBem", "SmileHub", "Bella Face"].map(
-            (n) => (
-              <span key={n} className="text-lg font-bold tracking-tight opacity-70">
-                {n}
-              </span>
-            ),
-          )}
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
+            <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              Clínicas que confiam na Naty
+            </span>
+            <div className="group relative w-full overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-black to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent" />
+              <div className="flex w-max animate-marquee items-center gap-16 group-hover:[animation-play-state:paused]">
+                {[...clinicNames, ...clinicNames].map((n, i) => (
+                  <span
+                    key={`${n}-${i}`}
+                    className="whitespace-nowrap text-xl font-black tracking-tighter text-white/50 transition-colors hover:text-white/90"
+                  >
+                    {n}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      */}
     </section>
   );
 }
@@ -229,7 +209,6 @@ function PainSection() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <SectionTag>A dor</SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             Reconhece alguma dessas situações?
           </h2>
@@ -278,9 +257,6 @@ function Calculator() {
         <div className="overflow-hidden rounded-3xl bg-[var(--panel)] text-[var(--ink-foreground)] shadow-[var(--shadow-elegant)]">
           <div className="grid gap-10 p-8 md:grid-cols-[1.1fr_1fr] md:p-14">
             <div>
-              <SectionTag>
-                <span className="text-white/80">Calculadora</span>
-              </SectionTag>
               <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
                 Faça as contas do que sua clínica está deixando na mesa.
               </h2>
@@ -391,7 +367,6 @@ function Solution() {
     <section id="solucao" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-3xl">
-          <SectionTag>A solução</SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             A Naty é a estrutura que sua clínica precisa.
           </h2>
@@ -434,44 +409,6 @@ function Solution() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- VIDEO ---------------- */
-function VideoSection() {
-  return (
-    <section id="demo-video" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <SectionTag>Demonstração</SectionTag>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            Veja a Naty rodando em uma clínica real.
-          </h2>
-        </div>
-        <div className="relative mt-10 aspect-video overflow-hidden rounded-3xl border border-white/10 bg-[var(--panel)]">
-          <img
-            src={heroMockup}
-            alt="Vídeo demonstração Naty"
-            loading="lazy"
-            className="h-full w-full object-cover opacity-60"
-          />
-          <button
-            className="absolute inset-0 grid place-items-center"
-            aria-label="Reproduzir vídeo"
-          >
-            <span className="grid h-20 w-20 place-items-center rounded-full bg-[var(--cta)] text-[var(--cta-foreground)] shadow-2xl transition-transform hover:scale-105">
-              <Play className="h-8 w-8 fill-current" />
-            </span>
-          </button>
-          <div className="absolute bottom-4 left-4 rounded-full bg-black/40 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-            90 segundos
-          </div>
-        </div>
-        <div className="mt-8 flex justify-center">
-          <CTAButton href="#cta-final">Quero ver isso funcionando na minha clínica</CTAButton>
         </div>
       </div>
     </section>
@@ -522,9 +459,6 @@ function Testimonials() {
     <section id="depoimentos" className="bg-[var(--panel)] py-20 text-[var(--ink-foreground)] sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <SectionTag>
-            <span className="text-white">Prova social</span>
-          </SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             Clínicas que já organizaram o WhatsApp com a Naty.
           </h2>
@@ -614,7 +548,6 @@ function Process() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <SectionTag>Como funciona</SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             Em 7 dias sua clínica está rodando.
           </h2>
@@ -664,7 +597,6 @@ function Comparison() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <SectionTag>Diferenciais</SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             Por que a Naty é diferente.
           </h2>
@@ -746,7 +678,6 @@ function FAQ() {
     <section id="faq" className="py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div>
-          <SectionTag>FAQ</SectionTag>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             Perguntas que a gente sempre escuta.
           </h2>
@@ -784,7 +715,6 @@ function FinalCTA() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 rounded-3xl border border-white/10 bg-[var(--panel)] p-8 shadow-[var(--shadow-elegant)] md:grid-cols-[1.1fr_1fr] md:p-14">
           <div>
-            <SectionTag>Última chamada</SectionTag>
             <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               Sua clínica pode parar de perder pacientes ainda essa semana.
             </h2>
@@ -922,7 +852,7 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center">
-            <img src={natyLogo.url} alt="Naty Clinic" className="h-10 w-auto" />
+            <img src={natyLogo} alt="Naty Clinic" className="h-10 w-auto" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-white/60">
             IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Feita para clínicas
@@ -1028,7 +958,6 @@ function Landing() {
         <PainSection />
         <Calculator />
         <Solution />
-        <VideoSection />
         <Testimonials />
         <Process />
         <Comparison />
