@@ -25,6 +25,9 @@ pnpm-lock.yaml
 .wrangler/
 .dev.vars
 
+# Raw brand asset dump (.ai/.pdf/fonts/images) — reference material, not web source
+src/id_visual_naty.app/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

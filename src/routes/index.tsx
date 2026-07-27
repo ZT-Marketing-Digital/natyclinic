@@ -27,9 +27,8 @@ import teamPhoto from "@/assets/team.jpg";
 import featureInbox from "@/assets/feature-inbox.jpg";
 import featureAi from "@/assets/feature-ai.jpg";
 import featureClinicorp from "@/assets/feature-clinicorp.jpg";
-import natyLogo from "@/assets/naty-logo.jpg";
 
-
+import { NatyLogo } from "@/components/naty-logo";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -86,7 +85,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-white/5 bg-black/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a href="#" className="flex items-center" aria-label="Naty Clinic">
-          <img src={natyLogo} alt="Naty Clinic" className="h-9 w-auto sm:h-10" />
+          <NatyLogo className="h-9 w-auto sm:h-10" />
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-white/75 md:flex">
           <a href="#solucao" className="hover:text-white">Solução</a>
@@ -726,6 +725,29 @@ function FinalCTA() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+
+                const nichoLabel =
+                  { odonto: "Odontologia", estetica: "Estética", outro: "Outro" }[form.nicho] ||
+                  form.nicho;
+                const clinicorpLabel =
+                  { sim: "Sim", nao: "Não" }[form.clinicorp] || form.clinicorp;
+
+                const message = [
+                  "Olá! Quero agendar uma demonstração gratuita da Naty.",
+                  "",
+                  `Nome: ${form.name}`,
+                  `WhatsApp: ${form.whatsapp}`,
+                  `Nicho: ${nichoLabel}`,
+                  `Profissionais que atendem: ${form.profissionais}`,
+                  `Usa Clinicorp: ${clinicorpLabel}`,
+                ].join("\n");
+
+                window.open(
+                  `https://wa.me/5545988430522?text=${encodeURIComponent(message)}`,
+                  "_blank",
+                  "noreferrer",
+                );
+
                 setSent(true);
               }}
               className="mt-8 space-y-4"
@@ -852,7 +874,7 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center">
-            <img src={natyLogo} alt="Naty Clinic" className="h-10 w-auto" />
+            <NatyLogo className="h-10 w-auto" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-white/60">
             IA que responde, qualifica e agenda pacientes 24h no WhatsApp. Feita para clínicas
@@ -921,7 +943,7 @@ function StickyCTA() {
         <ArrowRight className="h-4 w-4" />
       </a>
       <a
-        href="https://wa.me/5500000000000"
+        href="https://wa.me/5545988430522"
         target="_blank"
         rel="noreferrer"
         aria-label="Fale com a gente no WhatsApp"
